@@ -10,6 +10,18 @@
   body {
     @apply antialiased text-gray-900 bg-white;
     font-family: 'Elms Sans', system-ui, sans-serif;
+    background: radial-gradient(circle at 10% 10%, rgba(252, 231, 243, 0.55), transparent 32%),
+                radial-gradient(circle at 90% 20%, rgba(236, 165, 215, 0.35), transparent 28%),
+                radial-gradient(circle at 15% 80%, rgba(252, 231, 243, 0.35), transparent 30%),
+                #ffffff;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+  }
+
+  strong, b {
+    font-weight: 700;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -18,8 +30,17 @@
 }
 
 @layer components {
+  :root {
+    --section-y: clamp(64px, 6vw, 96px);
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
   }
 
   .gradient-text {

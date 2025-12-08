@@ -38,17 +38,26 @@ const itemVariants = {
 
 export default function WhyTeatalz() {
   return (
-    <section id="features" className="py-20 md:py-28 bg-white">
+    <section
+      id="features"
+      className="section-spacing bg-white scroll-mt-24 relative overflow-hidden"
+    >
+      {/* Soft ambient glows */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-16 -left-10 w-64 h-64 bg-pink-100/50 blur-3xl" />
+        <div className="absolute bottom-0 right-10 w-72 h-72 bg-purple-100/40 blur-[90px]" />
+      </div>
+
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             Why <span className="gradient-text">Teatalz</span>?
           </h2>
         </motion.div>

@@ -1,135 +1,115 @@
-import { motion } from 'framer-motion';
-import { Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
-import type { FooterLinkGroup } from '@/types';
+import { motion } from "framer-motion";
+import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
+import { logo } from "@/assets";
 
-const footerLinks: FooterLinkGroup[] = [
-  {
-    title: 'Product',
-    links: [
-      { label: 'Features', href: '#features' },
-      { label: 'AI Modes', href: '#ai-modes' },
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'Townhall', href: '#townhall' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Us', href: '#' },
-      { label: 'Our Mission', href: '#' },
-      { label: 'CSR Impact', href: '#' },
-      { label: 'Careers', href: '#' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'Help Center', href: '#' },
-      { label: 'Safety Tips', href: '#' },
-      { label: 'Crisis Resources', href: '#' },
-      { label: 'Blog', href: '#' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Data Protection', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
-    ],
-  },
+const companyLinks = [
+  { label: "About Us", href: "#hero" },
+  { label: "Blog", href: "#features" },
+  { label: "CSR Impact", href: "#townhall" },
+  { label: "Careers", href: "#waitlist" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "#contact" },
+  { label: "Terms of Service", href: "#contact" },
+  { label: "Data Protection", href: "#contact" },
+  { label: "Cookie Policy", href: "#contact" },
 ];
 
 const socialLinks = [
-  { icon: <Instagram className="w-5 h-5" />, href: '#', label: 'Instagram' },
-  { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
-  { icon: <Linkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
-  { icon: <Youtube className="w-5 h-5" />, href: '#', label: 'YouTube' },
+  { icon: <Twitter className="w-4 h-4" />, href: "#", label: "Twitter" },
+  { icon: <Instagram className="w-4 h-4" />, href: "#", label: "Instagram" },
+  { icon: <Linkedin className="w-4 h-4" />, href: "#", label: "LinkedIn" },
+  { icon: <Mail className="w-4 h-4" />, href: "mailto:support@teatalz.com", label: "Email" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100">
-      <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
-          {/* Logo & Description */}
+    <footer className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#181d4a] via-[#3b1c63] to-[#831845]" />
+      <div className="relative container-custom py-12 md:py-14 text-white/90">
+        <div className="grid md:grid-cols-[1.2fr_1fr_1fr] gap-10 items-start">
+          {/* Brand */}
           <motion.div
-            className="col-span-2"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-4"
           >
-            {/* Logo */}
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">T</span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl flex items-center justify-center">
+                <img src={logo} alt="Teatalz logo" className="w-8 h-8 object-contain" />
               </div>
-              <span className="font-display font-bold text-xl text-gray-900">Teatalz</span>
-            </a>
-
-            <p className="text-sm text-gray-500 mb-6 max-w-xs">
-              Your AI companion for emotional wellness. Safe, private, and always here for you.
+              <span className="font-display font-semibold text-lg text-white">Teatalz</span>
+            </div>
+            <p className="text-xs md:text-sm text-white/80 leading-relaxed max-w-xs">
+              Your AI companion for emotional wellness.
+              Safe, private, and always here for you.
             </p>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
+            <div className="flex items-center gap-3">
+              {socialLinks.map((item, idx) => (
                 <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors"
-                  aria-label={social.label}
+                  key={idx}
+                  href={item.href}
+                  aria-label={item.label}
+                  className="w-9 h-9 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 >
-                  {social.icon}
+                  {item.icon}
                 </a>
               ))}
             </div>
           </motion.div>
 
-          {/* Link Groups */}
-          {footerLinks.map((group, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <h4 className="font-display font-semibold text-gray-900 mb-4">
-                {group.title}
-              </h4>
-              <ul className="space-y-3">
-                {group.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          {/* Company */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-3"
+          >
+            <p className="text-sm font-semibold text-white">Company</p>
+            {companyLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="block text-sm text-white/80 hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </motion.div>
+
+          {/* Legal */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-3"
+          >
+            <p className="text-sm font-semibold text-white">Legal</p>
+            {legalLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="block text-sm text-white/80 hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Bottom Bar */}
         <motion.div
-          className="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10 text-center text-xs text-white/80"
         >
-          <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Teatalz. All rights reserved.
-          </p>
-          <p className="text-sm text-gray-400">
-            Made with 💜 for your emotional wellness
-          </p>
+          © Built by Error Technologies. All rights reserved.
         </motion.div>
       </div>
     </footer>

@@ -83,18 +83,21 @@ const itemVariants = {
 
 export default function AIModes() {
   return (
-    <section id="ai-modes" className="relative py-20 md:py-28 overflow-hidden">
+    <section
+      id="ai-modes"
+      className="relative section-spacing overflow-hidden scroll-mt-24"
+    >
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-pink-200/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute top-0 right-0 w-48 h-48 bg-pink-100/50 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-200/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-100/40 rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
+        <div className="absolute top-0 left-0 w-64 h-64 bg-pink-200/45 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-0 right-6 w-48 h-48 bg-pink-100/55 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4" />
+        <div className="absolute bottom-6 left-0 w-72 h-72 bg-amber-100/35 rounded-full blur-[90px] -translate-x-1/2 translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-56 h-56 bg-purple-100/45 rounded-full blur-[90px] translate-x-1/4 translate-y-1/3" />
       </div>
 
       <div className="container-custom relative">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:flex-start gap-8 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:flex-start gap-8 mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +130,7 @@ export default function AIModes() {
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <p className="text-sm font-medium text-gray-700">
-                  I am rume, Your non judgemental AI BFF
+                  I'm Rumi, your non-judgemental AI BFF
                 </p>
               </motion.div>
 

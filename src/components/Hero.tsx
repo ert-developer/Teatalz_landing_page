@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-20 md:pt-24 pb-16 overflow-hidden bg-gradient-to-b from-pink-50/50 to-white"
+      className="relative min-h-screen pt-20 md:pt-24 overflow-hidden bg-gradient-to-b from-pink-50/50 to-white scroll-mt-24"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

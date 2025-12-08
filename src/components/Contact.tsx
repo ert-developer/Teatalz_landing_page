@@ -3,7 +3,7 @@ import { Button } from './ui';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-gray-50">
+    <section id="contact" className="section-spacing bg-gray-50 scroll-mt-24">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-2xl mx-auto"

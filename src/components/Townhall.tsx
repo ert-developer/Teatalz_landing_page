@@ -62,11 +62,18 @@ const itemVariants = {
 
 export default function Townhall() {
   return (
-    <section id="townhall" className="py-20 md:py-28 bg-white">
+    <section
+      id="townhall"
+      className="section-spacing bg-white scroll-mt-24 relative overflow-hidden"
+    >
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-6 left-6 w-72 h-72 bg-pink-100/50 blur-[90px]" />
+        <div className="absolute bottom-0 right-10 w-80 h-80 bg-purple-100/45 blur-[100px]" />
+      </div>
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -75,7 +82,7 @@ export default function Townhall() {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             You're not alone <span className="gradient-text">Join the Townhall</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-2xl">
             Connect with others who get it. Share your story, offer support, and find comfort—all while staying completely anonymous.
           </p>
         </motion.div>
