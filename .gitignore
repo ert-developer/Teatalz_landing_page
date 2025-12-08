@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+*.log
+*.tmp
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor/IDE settings
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional: TypeScript cache
+*.tsbuildinfo
+
+# Optional: Yarn / PNPM / NPM logs
+yarn-error.log
+pnpm-debug.log
+npm-debug.log
+
+# Optional: lock files (if you only want one type)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
