@@ -10,6 +10,7 @@ import {
   Contact,
   Footer,
 } from './components';
+import Blog from './components/Blog';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <EmotionalJourney />
         <Pricing />
         <Waitlist />
+        <Blog/>
         <Contact />
       </main>
       <Footer />

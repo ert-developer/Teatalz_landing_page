@@ -9,8 +9,10 @@ const navItems: NavItem[] = [
   { label: "Features", href: "#features" },
   { label: "AI Modes", href: "#ai-modes" },
   { label: "Townhall", href: "#townhall" },
-  { label: "Plans", href: "#pricing" },
+  { label: "Blog", href: "#blog" },
+  { label: "Price", href: "#Price" },
   { label: "Support", href: "#contact" },
+  
 ];
 
 export default function Navbar() {
@@ -25,6 +27,32 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ⭐ FIXED SCROLL HANDLER (works on mobile + closes menu before moving)
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    event.preventDefault();
+
+    const targetId = href.replace("#", "");
+    const targetEl = document.getElementById(targetId);
+
+    // Close mobile menu FIRST
+    setIsMobileMenuOpen(false);
+
+    // Delay scrolling slightly so hamburger menu closes cleanly
+    setTimeout(() => {
+      if (targetEl) {
+        targetEl.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else if (href === "#hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, 300); // match menu close animation duration
+  };
 
   return (
     <motion.header
@@ -42,6 +70,7 @@ export default function Navbar() {
             href="#hero"
             className="flex items-center gap-2"
             aria-label="Teatalz Home"
+            onClick={(e) => handleNavClick(e, "#hero")}
           >
             <img src={logo} alt="Teatalz Logo" className="w-8 h-8 rounded" />
             <span className="font-display font-bold text-xl text-gray-900">
@@ -56,6 +85,7 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.label}
               </a>
@@ -88,7 +118,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25 }}
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item) => (
@@ -96,11 +126,12 @@ export default function Navbar() {
                     key={item.label}
                     href={item.href}
                     className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                   >
                     {item.label}
                   </a>
                 ))}
+
                 <div className="px-4 pt-2">
                   <Button href="#waitlist" className="w-full">
                     Join Waitlist

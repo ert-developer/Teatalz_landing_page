@@ -20,7 +20,7 @@ const pricingPlans: PricingPlan[] = [
   },
   {
     name: "LITE Pack",
-    features: ["500K sips/month", "Advanced features", "Tarot mode", "Meme tokens", "Mood Analytics"],
+    features: ["500K sips/month", "Advanced features", "Tarot mode"],
     bg: "bg-gradient-to-br from-purple-50 to-purple-100",
     hover: "hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:border-purple-400",
   },
@@ -29,8 +29,6 @@ const pricingPlans: PricingPlan[] = [
     features: [
       "500K sips/month",
       "Unlimited AI features",
-      "Couple mode",
-      "Custom avatars",
       "Permanent storage",
     ],
     highlighted: true,
@@ -40,7 +38,6 @@ const pricingPlans: PricingPlan[] = [
   {
     name: "COLLEGE Pack",
     features: ["250K sips/month", "Premium Access", "Unlock dank, tarot", "College ID required"],
-    badge: "Students",
     bg: "bg-gradient-to-br from-orange-50 to-orange-100",
     hover: "hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:border-orange-400",
   },

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Brain, Heart, Smile, Sparkles } from "lucide-react";
-import { rumi_avatar } from "@/assets";
+import { rume_avatar } from "@/assets";
 
 interface AIMode {
   name: string;
@@ -130,14 +130,14 @@ export default function AIModes() {
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <p className="text-sm font-medium text-gray-700">
-                  I'm Rumi, your non-judgemental AI BFF
+                  I'm Rume, your non-judgemental AI BFF
                 </p>
               </motion.div>
 
               {/* Character Avatar */}
               <div className="w-24 h-24 lg:w-28 lg:h-28">
                 <img
-                  src={rumi_avatar}
+                  src={rume_avatar}
                   alt="Rume - Your AI BFF"
                   className="w-full h-full object-contain"
                 />
