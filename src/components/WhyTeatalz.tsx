@@ -1,0 +1,86 @@
+import { motion } from 'framer-motion';
+import { Heart, Lock, Clock } from 'lucide-react';
+import { Card } from './ui';
+import type { FeatureCardProps } from '@/types';
+
+const features: FeatureCardProps[] = [
+  {
+    icon: <Heart className="w-6 h-6 text-magenta" />,
+    title: 'Empathy-Driven AI',
+    description: 'Supportive, warm, human-like conversations.',
+  },
+  {
+    icon: <Lock className="w-6 h-6 text-magenta" />,
+    title: 'Anonymous & Safe',
+    description: 'Express freely without revealing your identity.',
+  },
+  {
+    icon: <Clock className="w-6 h-6 text-magenta" />,
+    title: '7 Day Auto Delete',
+    description: 'Your data stays private and temporary.',
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export default function WhyTeatalz() {
+  return (
+    <section id="features" className="py-20 md:py-28 bg-white">
+      <div className="container-custom">
+        {/* Section Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Why <span className="gradient-text">Teatalz</span>?
+          </h2>
+        </motion.div>
+
+        {/* Feature Cards */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+        >
+          {features.map((feature, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <Card className="text-center h-full" padding="lg">
+                {/* Icon Container */}
+                <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-pink-50 flex items-center justify-center">
+                  {feature.icon}
+                </div>
+
+                {/* Content */}
+                <h3 className="font-display text-xl font-semibold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-500 leading-relaxed">
+                  {feature.description}
+                </p>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
