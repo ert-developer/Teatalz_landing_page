@@ -1,23 +1,23 @@
-import { motion } from 'framer-motion';
-import { Heart, Lock, Clock } from 'lucide-react';
-import { Card } from './ui';
-import type { FeatureCardProps } from '@/types';
+import { motion } from "framer-motion";
+import { Heart, Lock, Clock } from "lucide-react";
+import { Card } from "./ui";
+import type { FeatureCardProps } from "@/types";
 
 const features: FeatureCardProps[] = [
   {
     icon: <Heart className="w-6 h-6 text-magenta" />,
-    title: 'Empathy-Driven AI',
-    description: 'Supportive, warm, human-like conversations.',
+    title: "Empathy-Driven AI",
+    description: "Supportive, warm, human-like conversations.",
   },
   {
     icon: <Lock className="w-6 h-6 text-magenta" />,
-    title: 'Anonymous & Safe',
-    description: 'Express freely without revealing your identity.',
+    title: "Anonymous & Safe",
+    description: "Express freely without revealing your identity.",
   },
   {
     icon: <Clock className="w-6 h-6 text-magenta" />,
-    title: '7 Day Auto Delete',
-    description: 'Your data stays private and temporary.',
+    title: "7 Day Auto Delete",
+    description: "Your data stays private and temporary.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function WhyTeatalz() {
   return (
     <section
       id="features"
-      className="section-spacing bg-white scroll-mt-24 relative overflow-hidden"
+      className="section-spacing bg-white relative overflow-hidden section-divider"
     >
       {/* Soft ambient glows */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -51,7 +51,7 @@ export default function WhyTeatalz() {
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
-          className="mb-16"
+          className="mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -64,15 +64,18 @@ export default function WhyTeatalz() {
 
         {/* Feature Cards */}
         <motion.div
-          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="text-center h-full" padding="lg">
+              <Card
+                className="text-center h-full border-2 border-gray-300 shadow-md hover:border-gray-400 hover:shadow-lg"
+                padding="lg"
+              >
                 {/* Icon Container */}
                 <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-pink-50 flex items-center justify-center">
                   {feature.icon}

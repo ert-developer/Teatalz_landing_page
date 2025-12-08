@@ -20,12 +20,16 @@ const socialLinks = [
   { icon: <Twitter className="w-4 h-4" />, href: "#", label: "Twitter" },
   { icon: <Instagram className="w-4 h-4" />, href: "#", label: "Instagram" },
   { icon: <Linkedin className="w-4 h-4" />, href: "#", label: "LinkedIn" },
-  { icon: <Mail className="w-4 h-4" />, href: "mailto:support@teatalz.com", label: "Email" },
+  {
+    icon: <Mail className="w-4 h-4" />,
+    href: "mailto:support@teatalz.com",
+    label: "Email",
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="relative overflow-hidden border-t-2 border-gray-500">
       <div className="absolute inset-0 bg-gradient-to-br from-[#181d4a] via-[#3b1c63] to-[#831845]" />
       <div className="relative container-custom py-12 md:py-14 text-white/90">
         <div className="grid md:grid-cols-[1.2fr_1fr_1fr] gap-10 items-start">
@@ -39,13 +43,19 @@ export default function Footer() {
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl flex items-center justify-center">
-                <img src={logo} alt="Teatalz logo" className="w-8 h-8 object-contain" />
+                <img
+                  src={logo}
+                  alt="Teatalz logo"
+                  className="w-8 h-8 object-contain"
+                />
               </div>
-              <span className="font-display font-semibold text-lg text-white">Teatalz</span>
+              <span className="font-display font-semibold text-lg text-white">
+                Teatalz
+              </span>
             </div>
             <p className="text-xs md:text-sm text-white/80 leading-relaxed max-w-xs">
-              Your AI companion for emotional wellness.
-              Safe, private, and always here for you.
+              Your AI companion for emotional wellness. Safe, private, and
+              always here for you.
             </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((item, idx) => (
@@ -109,7 +119,16 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10 text-center text-xs text-white/80"
         >
-          © Built by Error Technologies. All rights reserved.
+          © Built by{" "}
+          <a
+            href="https://www.errortechnologies.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-white/80 transition-colors hover:underline"
+          >
+            Error Technologies
+          </a>
+          . All rights reserved.
         </motion.div>
       </div>
     </footer>

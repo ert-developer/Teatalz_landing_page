@@ -1,43 +1,55 @@
-import { motion } from 'framer-motion';
-import { UserCircle, Users, Shield, ThumbsUp, MessageCircle } from 'lucide-react';
-import { Card } from './ui';
-import type { TownhallFeatureProps, TestimonialProps } from '@/types';
+import { motion } from "framer-motion";
+import {
+  UserCircle,
+  Users,
+  Shield,
+  ThumbsUp,
+  MessageCircle,
+} from "lucide-react";
+import { Card } from "./ui";
+import type { TownhallFeatureProps, TestimonialProps } from "@/types";
 
 const townhallFeatures: TownhallFeatureProps[] = [
   {
     icon: <UserCircle className="w-6 h-6 text-magenta" />,
-    title: '100% Anonymous',
-    description: 'No usernames, no profiles, no identities. Just real people, real experiences in a safe space.',
+    title: "100% Anonymous",
+    description:
+      "No usernames, no profiles, no identities. Just real people, real experiences in a safe space.",
   },
   {
     icon: <Users className="w-6 h-6 text-magenta" />,
-    title: 'Supportive Community',
-    description: "Get encouragement from people who truly understand what you're going through. We're all in this together.",
+    title: "Supportive Community",
+    description:
+      "Get encouragement from people who truly understand what you're going through. We're all in this together.",
   },
   {
     icon: <Shield className="w-6 h-6 text-magenta" />,
-    title: 'Moderated for Safety',
-    description: 'Our AI and human moderators ensure the space stays kind, supportive, and free from harmful content.',
+    title: "Moderated for Safety",
+    description:
+      "Our AI and human moderators ensure the space stays kind, supportive, and free from harmful content.",
   },
 ];
 
 const testimonials: TestimonialProps[] = [
   {
-    content: "Finally found a space where I can be honest about my struggles. Thank you, Teatalz Townhall!",
+    content:
+      "Finally found a space where I can be honest about my struggles. Thank you, Teatalz Townhall!",
     author: "Anonymous",
     timeAgo: "2h ago",
     likes: 234,
     comments: 18,
   },
   {
-    content: "Used Think Tank mode today and got such helpful advice. Feeling more confident about my decision.",
+    content:
+      "Used Think Tank mode today and got such helpful advice. Feeling more confident about my decision.",
     author: "Anonymous",
     timeAgo: "4h ago",
     likes: 156,
     comments: 24,
   },
   {
-    content: "The anonymity here makes all the difference. I can share without fear of judgment.",
+    content:
+      "The anonymity here makes all the difference. I can share without fear of judgment.",
     author: "Anonymous",
     timeAgo: "6h ago",
     likes: 312,
@@ -64,7 +76,7 @@ export default function Townhall() {
   return (
     <section
       id="townhall"
-      className="section-spacing bg-white scroll-mt-24 relative overflow-hidden"
+      className="section-spacing bg-white relative overflow-hidden section-divider"
     >
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-6 left-6 w-72 h-72 bg-pink-100/50 blur-[90px]" />
@@ -73,21 +85,23 @@ export default function Townhall() {
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
-          className="mb-16"
+          className="mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            You're not alone <span className="gradient-text">Join the Townhall</span>
+            You're not alone{" "}
+            <span className="gradient-text">Join the Townhall</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl">
-            Connect with others who get it. Share your story, offer support, and find comfort—all while staying completely anonymous.
+          <p className="text-gray-500 max-w-2xl text-sm md:text-base">
+            Connect with others who get it. Share your story, offer support, and
+            find comfort—all while staying completely anonymous.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left - Testimonials */}
           <motion.div
             className="space-y-4"
@@ -98,7 +112,11 @@ export default function Townhall() {
           >
             {testimonials.map((testimonial, index) => (
               <motion.div key={index} variants={itemVariants}>
-                <Card className="flex gap-4" padding="md" hover>
+                <Card
+                  className="flex gap-4 border-2 border-gray-300 shadow-md hover:border-gray-400 hover:shadow-lg"
+                  padding="md"
+                  hover
+                >
                   {/* Avatar */}
                   <div className="flex-shrink-0">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-200 to-magenta-light flex items-center justify-center">

@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
 
       <div className="container-custom relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-8rem)]">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)] py-8 md:py-12">
           {/* Left Content */}
           <motion.div
             className="text-center lg:text-left"

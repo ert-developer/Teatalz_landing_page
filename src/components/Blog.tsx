@@ -1,25 +1,12 @@
 import { motion } from "framer-motion";
-import { BookOpen, Sparkles } from "lucide-react";
+import { Sparkles, FileText } from "lucide-react";
 import { Card } from "./ui";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 export default function Blog() {
   return (
     <section
       id="blog"
-      className="section-spacing bg-white scroll-mt-24 relative overflow-hidden"
+      className="section-spacing bg-white relative overflow-hidden section-divider"
     >
       {/* Blurry background accents */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -30,7 +17,7 @@ export default function Blog() {
       <div className="container-custom">
         {/* Header */}
         <motion.div
-          className="mb-16 max-w-3xl"
+          className="mb-12 md:mb-16 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,42 +27,50 @@ export default function Blog() {
             Blogs <span className="gradient-text">Coming Soon</span>
           </h2>
 
-          <p className="text-gray-500 text-base md:text-lg">
-            We’re brewing thoughtful stories, insights, mental health guides, and
-            behind-the-scenes journeys to help you feel seen, heard, and supported.
+          <p className="text-gray-500 text-sm md:text-base lg:text-lg">
+            We're brewing thoughtful stories, insights, mental health guides,
+            and behind-the-scenes journeys to help you feel seen, heard, and
+            supported.
           </p>
         </motion.div>
 
-        {/* Content */}
+        {/* Content - Centered Design */}
         <motion.div
-          className="max-w-2xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-          <motion.div variants={itemVariants}>
-            <Card padding="lg" className="text-center space-y-6">
-              <div className="flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-200 to-magenta-light flex items-center justify-center">
-                  <BookOpen className="w-8 h-8 text-magenta" />
+          {/* Main Coming Soon Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card padding="lg" className="bg-white border-2 border-gray-200">
+              <div className="flex items-center gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-200 to-magenta-light flex items-center justify-center">
+                    <FileText className="w-8 h-8 text-magenta" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                    Fresh content is brewing...
+                  </h3>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="inline-flex items-center gap-2 text-sm text-gray-500"
+                  >
+                    <Sparkles className="w-4 h-4 text-magenta" />
+                    <span>Brewing inspiration...</span>
+                  </motion.div>
                 </div>
               </div>
-
-              <h3 className="font-display text-xl md:text-2xl font-semibold text-gray-900">
-                Fresh content is brewing...
-              </h3>
-
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="inline-flex items-center gap-2 text-sm text-gray-400 animate-pulse"
-              >
-                <Sparkles className="w-4 h-4" />
-                Brewing inspiration...
-              </motion.div>
             </Card>
           </motion.div>
         </motion.div>

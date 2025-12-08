@@ -74,7 +74,7 @@ export default function Waitlist() {
   return (
     <section
       id="waitlist"
-      className="section-spacing bg-gray-50 scroll-mt-24 relative overflow-hidden"
+      className="section-spacing bg-gray-50 scroll-mt-24 relative overflow-hidden section-divider-thick"
     >
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-0 right-10 w-72 h-72 bg-pink-100/45 blur-[90px]" />
@@ -82,7 +82,7 @@ export default function Waitlist() {
       </div>
 
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
