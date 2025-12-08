@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
   { label: "AI Modes", href: "#ai-modes" },
   { label: "Townhall", href: "#townhall" },
   { label: "Blog", href: "#blog" },
-  { label: "Price", href: "#Price" },
+  { label: "Price", href: "#pricing" },
   { label: "Support", href: "#contact" },
   
 ];
