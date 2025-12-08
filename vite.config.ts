@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  base: '/Teatalz_landing_page/',
-  
+  base: '/',   // IMPORTANT for custom domain
   plugins: [react()],
   resolve: {
     alias: {
