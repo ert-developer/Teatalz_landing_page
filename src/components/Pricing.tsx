@@ -21,7 +21,7 @@ const pricingPlans: PricingPlan[] = [
     ],
     bg: "bg-gradient-to-br from-blue-50 to-blue-100",
     hover:
-      "hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-2 hover:border-blue-600",
+      "hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-2 hover:border-blue-400",
   },
   {
     name: "LITE Pack",
