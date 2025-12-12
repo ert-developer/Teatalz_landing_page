@@ -1,9 +1,12 @@
-import { motion } from 'framer-motion';
-import { Button } from './ui';
+import { motion } from "framer-motion";
+import { Button } from "./ui";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-spacing bg-gray-50 scroll-mt-24 section-divider-thick">
+    <section
+      id="contact"
+      className="section-spacing bg-gray-50 scroll-mt-24 section-divider-thick"
+    >
       <div className="container-custom">
         <motion.div
           className="text-center max-w-2xl mx-auto"
@@ -16,9 +19,10 @@ export default function Contact() {
             Still have questions?
           </h2>
           <p className="text-gray-500 text-sm md:text-base mb-8">
-            Our support team is here to help. We typically respond within 24 hours.
+            Our support team is here to help. We typically respond within 24
+            hours.
           </p>
-          <Button href="mailto:support@teatalz.com" size="lg">
+          <Button href="mailto:rumesupport@teatalz.com" size="lg">
             Contact Support
           </Button>
         </motion.div>

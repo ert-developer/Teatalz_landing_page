@@ -22,7 +22,7 @@ const socialLinks = [
   { icon: <Linkedin className="w-4 h-4" />, href: "#", label: "LinkedIn" },
   {
     icon: <Mail className="w-4 h-4" />,
-    href: "mailto:support@teatalz.com",
+    href: "mailto:rumesupport@teatalz.com",
     label: "Email",
   },
 ];
