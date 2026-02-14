@@ -18,6 +18,19 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Handle SPA redirect from 404.html on gh-pages
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirect = params.get('p');
+        if (redirect) {
+          params.delete('p');
+          var remaining = params.toString();
+          var url = redirect + (remaining ? '?' + remaining : '');
+          window.history.replaceState(null, '', url);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

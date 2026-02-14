@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
+import {
+  Instagram,
+  Twitter,
+  Linkedin,
+  Mail,
+  Facebook,
+  Youtube,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 import { logo } from "@/assets";
 
 const companyLinks = [
@@ -10,20 +18,47 @@ const companyLinks = [
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "#contact" },
-  { label: "Terms of Service", href: "#contact" },
-  { label: "Data Protection", href: "#contact" },
-  { label: "Cookie Policy", href: "#contact" },
+  { label: "Privacy Policy", href: "/privacy-policy", isRoute: true },
+  { label: "Terms of Service", href: "/terms-of-service", isRoute: true },
+  { label: "Data Protection", href: "/data-protection", isRoute: true },
+  { label: "Cookie Policy", href: "/cookie-policy", isRoute: true },
 ];
 
 const socialLinks = [
-  { icon: <Twitter className="w-4 h-4" />, href: "#", label: "Twitter" },
-  { icon: <Instagram className="w-4 h-4" />, href: "#", label: "Instagram" },
-  { icon: <Linkedin className="w-4 h-4" />, href: "#", label: "LinkedIn" },
+  {
+    icon: <Twitter className="w-4 h-4" />,
+    href: "https://x.com/teatalz",
+    label: "Twitter",
+    target: "_blank",
+  },
+  {
+    icon: <Instagram className="w-4 h-4" />,
+    href: "https://www.instagram.com/helloteatalz",
+    label: "Instagram",
+    target: "_blank",
+  },
+  {
+    icon: <Linkedin className="w-4 h-4" />,
+    href: "https://www.linkedin.com/in/teatalz-house-of-rume-82268b39b/",
+    label: "LinkedIn",
+    target: "_blank",
+  },
   {
     icon: <Mail className="w-4 h-4" />,
-    href: "mailto:rumesupport@teatalz.com",
+    href: "mailto:support@teatalz.com",
     label: "Email",
+  },
+  {
+    icon: <Facebook className="w-4 h-4" />,
+    href: "https://www.facebook.com/profile.php?id=61584650184132",
+    label: "Facebook",
+    target: "_blank",
+  },
+  {
+    icon: <Youtube className="w-4 h-4" />,
+    href: "https://www.youtube.com/channel/UCvwJaJeFaK909XM6QLLtclA",
+    label: "YouTube",
+    target: "_blank",
   },
 ];
 
@@ -63,6 +98,10 @@ export default function Footer() {
                   key={idx}
                   href={item.href}
                   aria-label={item.label}
+                  target={item.target || "_self"}
+                  rel={
+                    item.target === "_blank" ? "noopener noreferrer" : undefined
+                  }
                   className="w-9 h-9 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 >
                   {item.icon}
@@ -100,15 +139,25 @@ export default function Footer() {
             className="space-y-3"
           >
             <p className="text-sm font-semibold text-white">Legal</p>
-            {legalLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="block text-sm text-white/80 hover:text-white transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {legalLinks.map((link, index) =>
+              link.isRoute ? (
+                <Link
+                  key={index}
+                  to={link.href}
+                  className="block text-sm text-white/80 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={index}
+                  href={link.href}
+                  className="block text-sm text-white/80 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </motion.div>
         </div>
 

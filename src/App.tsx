@@ -1,3 +1,4 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
 import {
   Navbar,
   Hero,
@@ -11,8 +12,12 @@ import {
   Footer,
 } from './components';
 import Blog from './components/Blog';
+import CookiePolicy from './pages/CookiePolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import DataProtection from './pages/DataProtection';
 
-function App() {
+function LandingPage() {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Soft background blooms for a calming, premium feel */}
@@ -36,6 +41,19 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/cookie-policy" element={<CookiePolicy />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/data-protection" element={<DataProtection />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
