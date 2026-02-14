@@ -15,10 +15,23 @@
         font-display: swap;
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-BfQpK6Po.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Ddz55AUK.css">
+    <script type="module" crossorigin src="/assets/index-B80kvks_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D0HqcEFf.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Handle SPA redirect from 404.html on gh-pages
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirect = params.get('p');
+        if (redirect) {
+          params.delete('p');
+          var remaining = params.toString();
+          var url = redirect + (remaining ? '?' + remaining : '');
+          window.history.replaceState(null, '', url);
+        }
+      })();
+    </script>
   </body>
 </html>
