@@ -122,9 +122,11 @@ export default function AIModes() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.15 }}
           >
-            <div className="relative flex flex-col items-center">
+            {/* Mobile: row layout — avatar left, bubble right */}
+            {/* Desktop (sm+): column layout — bubble above, avatar below */}
+            <div className="flex flex-row items-center gap-3 sm:flex-col sm:items-center">
               {/* Avatar Image */}
-              <div className="w-24 h-24 lg:w-28 lg:h-28 relative z-10">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 relative z-10 flex-shrink-0 sm:order-2">
                 <img
                   src={rume_avatar}
                   alt="Rume - AI Companion"
@@ -132,17 +134,15 @@ export default function AIModes() {
                 />
               </div>
 
-              {/* Bubble - Mobile: Below, Desktop: Above */}
+              {/* Bubble */}
               <motion.div
-                className="absolute top-full mt-3 sm:-top-14 left-1/2 -translate-x-1/2 z-20"
+                className="sm:order-1 sm:absolute sm:-top-14 sm:left-1/2 sm:-translate-x-1/2 z-20"
                 animate={{ y: [0, -4, 0] }}
                 transition={{ repeat: Infinity, duration: 3 }}
               >
-                <div className="px-2 sm:px-0">
-                  <p className="text-[10px] sm:text-sm font-medium text-gray-700 bg-white/95 backdrop-blur-md px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl shadow-lg border border-gray-300 text-center max-w-[200px] sm:max-w-none sm:whitespace-nowrap">
-                    I'm Rume — your non-judgmental AI BFF ✨
-                  </p>
-                </div>
+                <p className="text-xs sm:text-sm font-medium text-gray-700 bg-white/95 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl shadow-lg border border-gray-300 max-w-[150px] sm:max-w-none sm:whitespace-nowrap">
+                  I'm Rume — your non-judgmental AI BFF ✨
+                </p>
               </motion.div>
             </div>
           </motion.div>

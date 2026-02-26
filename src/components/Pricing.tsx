@@ -32,7 +32,11 @@ const pricingPlans: PricingPlan[] = [
   },
   {
     name: "PRO Pack",
-    features: ["500K sips/month", "Unlimited AI features", "Permanent storage"],
+    features: [
+      "500K sips/month",
+      "Unlimited AI features",
+      "Unlock dank, tarot",
+    ],
     bg: "bg-gradient-to-br from-pink-50 to-pink-100",
     hover:
       "hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] hover:border-2 hover:border-pink-400",
