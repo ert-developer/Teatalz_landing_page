@@ -25,21 +25,10 @@ const pricingPlans: PricingPlan[] = [
   },
   {
     name: "LITE Pack",
-    features: ["500K sips/month", "Advanced features", "Tarot mode"],
+    features: ["200K sips/month", "Advanced features", "Tarot mode"],
     bg: "bg-gradient-to-br from-purple-50 to-purple-100",
     hover:
       "hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:border-2 hover:border-purple-400",
-  },
-  {
-    name: "PRO Pack",
-    features: [
-      "500K sips/month",
-      "Unlimited AI features",
-      "Unlock dank, tarot",
-    ],
-    bg: "bg-gradient-to-br from-pink-50 to-pink-100",
-    hover:
-      "hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] hover:border-2 hover:border-pink-400",
   },
   {
     name: "COLLEGE Pack",
@@ -52,6 +41,17 @@ const pricingPlans: PricingPlan[] = [
     bg: "bg-gradient-to-br from-orange-50 to-orange-100",
     hover:
       "hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:border-2 hover:border-orange-400",
+  },
+  {
+    name: "PRO Pack",
+    features: [
+      "500K sips/month",
+      "Unlimited AI features",
+      "Unlock dank, tarot",
+    ],
+    bg: "bg-gradient-to-br from-pink-50 to-pink-100",
+    hover:
+      "hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] hover:border-2 hover:border-pink-400",
   },
 ];
 
