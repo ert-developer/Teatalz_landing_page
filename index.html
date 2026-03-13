@@ -1,40 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Teatalz - Your AI companion for emotional wellness. Talk, feel, and heal in a space made safe for you."
-    />
-    <title>Teatalz - AI Companion for Emotional Wellness</title>
-    <style>
-      @font-face {
-        font-family: "Elms Sans";
-        src: local("Elms Sans"), local("ElmsSans"), local("Elms-Sans");
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17HQEZ36K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E17HQEZ36K');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Teatalz - Your AI companion for emotional wellness. Talk, feel, and heal in a space made safe for you." />
+  <title>Teatalz - AI Companion for Emotional Wellness</title>
+  <style>
+    @font-face {
+      font-family: "Elms Sans";
+      src: local("Elms Sans"), local("ElmsSans"), local("Elms-Sans");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-CAAGWC5O.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-JaWf7fQt.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // Handle SPA redirect from 404.html on gh-pages
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var redirect = params.get("p");
+      if (redirect) {
+        params.delete("p");
+        var remaining = params.toString();
+        var url = redirect + (remaining ? "?" + remaining : "");
+        window.history.replaceState(null, "", url);
       }
-    </style>
-    <script type="module" crossorigin src="/assets/index-LoRV9CJQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-JaWf7fQt.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      // Handle SPA redirect from 404.html on gh-pages
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var redirect = params.get("p");
-        if (redirect) {
-          params.delete("p");
-          var remaining = params.toString();
-          var url = redirect + (remaining ? "?" + remaining : "");
-          window.history.replaceState(null, "", url);
-        }
-      })();
-    </script>
-  </body>
+    })();
+  </script>
+</body>
+
 </html>
