@@ -220,7 +220,7 @@ Please change the parent <Route path="${g}"> to <Route path="${g==="/"?"*":`${g}
     ${q2[t]}
     ${X2[n]}
     ${r}
-  `;return s?o.jsx(A.a,{href:s,className:c,whileHover:{scale:1.02},whileTap:{scale:.98},"aria-label":u,children:e}):o.jsx(A.button,{type:l,className:c,onClick:i,disabled:a,whileHover:{scale:a?1:1.02},whileTap:{scale:a?1:.98},"aria-label":u,children:e})}const Z2={none:"",sm:"p-4",md:"p-6",lg:"p-8"};function vo({children:e,className:t="",hover:n=!0,padding:r="md"}){return o.jsx(A.div,{className:`
+  `,d=()=>{s==="#waitlist"&&typeof window<"u"&&typeof window.gtag=="function"&&window.gtag("event","waitlist_click",{event_category:"engagement",event_label:"Navigate to Waitlist"}),i&&i()};return s?o.jsx(A.a,{href:s,className:c,onClick:d,whileHover:{scale:1.02},whileTap:{scale:.98},"aria-label":u,children:e}):o.jsx(A.button,{type:l,className:c,onClick:d,disabled:a,whileHover:{scale:a?1:1.02},whileTap:{scale:a?1:.98},"aria-label":u,children:e})}const Z2={none:"",sm:"p-4",md:"p-6",lg:"p-8"};function vo({children:e,className:t="",hover:n=!0,padding:r="md"}){return o.jsx(A.div,{className:`
         bg-white rounded-2xl
         border border-gray-100
         ${Z2[r]}
