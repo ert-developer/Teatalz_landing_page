@@ -35,11 +35,28 @@ export default function Button({
     ${className}
   `;
 
+  const handleClick = () => {
+    // Fire Google Analytics event if this button navigates to the waitlist
+    if (href === '#waitlist') {
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "waitlist_click", {
+          event_category: "engagement",
+          event_label: "Navigate to Waitlist",
+        });
+      }
+    }
+    
+    if (onClick) {
+      onClick();
+    }
+  };
+
   if (href) {
     return (
       <motion.a
         href={href}
         className={baseClasses}
+        onClick={handleClick as any}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         aria-label={ariaLabel}
@@ -53,7 +70,7 @@ export default function Button({
     <motion.button
       type={type}
       className={baseClasses}
-      onClick={onClick}
+      onClick={handleClick as any}
       disabled={disabled}
       whileHover={{ scale: disabled ? 1 : 1.02 }}
       whileTap={{ scale: disabled ? 1 : 0.98 }}
