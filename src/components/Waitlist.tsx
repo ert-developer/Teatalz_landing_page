@@ -34,6 +34,14 @@ export default function Waitlist() {
     setStatus("loading");
     setErrorMessage(null);
 
+    // Track the actual click/attempt
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "waitlist_click_attempt", {
+        event_category: "engagement",
+        event_label: "Waitlist Button Clicked",
+      });
+    }
+
     const name = formData.name.trim();
     const email = formData.email.trim().toLowerCase();
     const mobile = formData.mobile.trim();
@@ -48,6 +56,15 @@ export default function Waitlist() {
         setStatus("success");
         setIsDuplicate(true);
         setErrorMessage(null);
+        
+        // Track returning/duplicate user attempt
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "join_waitlist_duplicate", {
+            event_category: "engagement",
+            event_label: "Waitlist Duplicate Entry",
+          });
+        }
+
         setToastMessage("You're already registered on our waitlist.");
         setShowToast(true);
         setTimeout(() => setShowToast(false), 4000);
@@ -61,6 +78,16 @@ export default function Waitlist() {
 
     setStatus("success");
     setIsDuplicate(false);
+    
+    // GA4 Custom Event Tracking
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "join_waitlist", {
+        event_category: "engagement",
+        event_label: "Waitlist Submission",
+        method: "form",
+      });
+    }
+
     setFormData({ name: "", email: "", mobile: "" });
     setToastMessage("You're on the list!");
     setShowToast(true);
