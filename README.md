@@ -45,7 +45,7 @@ create index if not exists waitlist_created_at_idx on public.waitlist (created_a
 - `pnpm build` — type-check and build
 - `pnpm lint` — run eslint
 
-## Notes
+## Notes : 
 - The waitlist form trims and lowercases email, handles duplicate signups gracefully, and shows inline/toast feedback.
 - Sections use consistent spacing and scroll anchors for navigation.
 
